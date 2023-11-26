@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    background-image: url(../images/wood.jpg);
+    background-size: cover;
+    color: white;
+}
+
+h1{
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 50px;
+}
+
+.wrapper{
+    border: 10px inset black;
+    background-color: #cec9c9;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+    
+}
+
+h2 {
+    max-width: 550px;
+    padding: 10px;
+    background-color: rgb(172, 83, 51);
+    margin-bottom: 10px;
+    border-radius: 10px;
+    text-align: center;
+}
+

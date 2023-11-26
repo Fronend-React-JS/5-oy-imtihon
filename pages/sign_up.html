@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up</title>
+    <link rel="stylesheet" href="../styles/signup.css">
+    <!-- Font Awesome ikonalarni qo'shish -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Sign Up</h1>
+
+        <!-- Ortga qaytish uchun tugma -->
+        <a href="../index.html" id="back">
+            <i class="fa-solid fa-x" style="color: #ffffff;"></i>
+        </a>
+
+        <form id="form">
+            <input required type="text" id="name" placeholder="First Name">
+            <input required type="text" id="surname" placeholder="Last Name">
+            <input required type="email" id="email" placeholder="@Email">
+            <input required type="password" id="password" placeholder="Password">
+
+            <input type="button" id="up_btn" value="Send">
+        </form>
+    </div>
+
+    <script src="../js/signup.js"></script>
+</body>
+</html>

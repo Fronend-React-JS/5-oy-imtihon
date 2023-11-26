@@ -1,0 +1,89 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+    font-size: 18px;
+    font-family: sans-serif;
+    background-color: black;
+    background-image: url(../images/backgraund.jpg);
+    background-size: cover; /* Ekranning barchasini egallash */
+    background-repeat: no-repeat; /* Rasmni takrorlamaslik */
+    color: white; /* Matn rangi oq */
+  }
+
+.container {
+  width: 300px;
+  height: 450px;
+  margin: 0 auto;
+  margin-top: 100px;
+  padding: 20px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  background-image: url(../images/movie-sgnIn.jpg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat; 
+  box-shadow: 10px 10px 10px black;
+  position: relative;
+}
+
+h1 {
+  text-align: center;
+  color: #fff;
+}
+
+.container form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 30px;
+}
+form input {
+  padding: 10px 15px;
+  border-radius: 15px;
+  border: none;
+}
+
+#name {
+  margin-bottom: 10px;
+}
+
+#surname {
+  margin-bottom: 10px;
+}
+
+#number {
+  margin-bottom: 10px;
+}
+
+#email {
+  margin-bottom: 10px;
+}
+
+#back{
+  width: 20px;
+  padding: 2px 10px;
+  position: absolute;
+  right: 30px;
+  top: 30px;
+}
+
+#up_btn {
+  background-color: rgb(0, 216, 216);
+  border: none;
+  color: white;
+  font-size: 20px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+#up_btn:hover {
+  background-color: rgb(2, 131, 131);
+  transition: all 0.4s;
+}
