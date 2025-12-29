@@ -1,95 +1,32 @@
-const form = document.getElementById("form");
-const emailInput = document.getElementById("email");
-const passwordInput = document.getElementById("password");
-const btn = document.getElementById("btn");
+const form = document.getElementById("signinForm");
+const errorMsg = document.getElementById("errorMsg");
 
-/* =========================
-   EMAIL TEKSHIRUV
-========================= */
-function isValidEmail(email) {
-  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  return regex.test(email);
-}
+form.addEventListener("submit", function (e) {
+    e.preventDefault();
 
-/* =========================
-   XATO KO‘RSATISH
-========================= */
-function showError(input, message) {
-  input.classList.add("error");
-  input.placeholder = message;
-  input.value = "";
-  input.focus();
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value.trim();
 
-  // shake animatsiya
-  input.classList.add("shake");
-  setTimeout(() => input.classList.remove("shake"), 400);
-}
+    let users = localStorage.getItem("users")
+        ? JSON.parse(localStorage.getItem("users"))
+        : [];
 
-/* =========================
-   VALIDATSIYA
-========================= */
-function validateForm() {
-  if (!emailInput.value.trim()) {
-    showError(emailInput, "Emailni kiriting!");
-    return false;
-  }
+    if (users.length === 0) {
+        errorMsg.innerText = "Foydalanuvchi topilmadi. Avval ro‘yxatdan o‘ting.";
+        return;
+    }
 
-  if (!isValidEmail(emailInput.value.trim())) {
-    showError(emailInput, "Email formati noto‘g‘ri!");
-    return false;
-  }
+    const user = users.find(
+        u => u.email === email && u.password === password
+    );
 
-  if (!passwordInput.value.trim()) {
-    showError(passwordInput, "Parolni kiriting!");
-    return false;
-  }
+    if (!user) {
+        errorMsg.innerText = "Email yoki parol noto‘g‘ri!";
+        return;
+    }
 
-  return true;
-}
+    // Login muvaffaqiyatli
+    localStorage.setItem("currentUser", JSON.stringify(user));
 
-/* =========================
-   SIGN IN
-========================= */
-btn.addEventListener("click", (e) => {
-  e.preventDefault();
-
-  if (!validateForm()) return;
-
-  const users = localStorage.getItem("users")
-    ? JSON.parse(localStorage.getItem("users"))
-    : [];
-
-  if (!users.length) {
-    alert("Hech qanday foydalanuvchi topilmadi. Avval ro‘yxatdan o‘ting!");
-    window.location.href = "sign_up.html";
-    return;
-  }
-
-  const user = users.find(
-    (u) =>
-      u.email === emailInput.value.trim() &&
-      u.password === passwordInput.value
-  );
-
-  if (user) {
-    // muvaffaqiyatli kirish
-    btn.innerText = "Kirilmoqda...";
-    btn.disabled = true;
-
-    setTimeout(() => {
-      window.location.href = `success.html?user=${user.email}`;
-    }, 900);
-  } else {
-    showError(emailInput, "Email yoki parol noto‘g‘ri!");
-    passwordInput.value = "";
-  }
-});
-
-/* =========================
-   INPUT TOZALASH
-========================= */
-[emailInput, passwordInput].forEach((input) => {
-  input.addEventListener("input", () => {
-    input.classList.remove("error");
-  });
+    window.location.href = "success.html?user=" + user.email;
 });
