@@ -1,32 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign up</title>
-    <link rel="stylesheet" href="../styles/signup.css">
-    <!-- Font Awesome ikonalarni qo'shish -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <!-- Style -->
+  <link rel="stylesheet" href="../styles/signup.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Sign Up</h1>
+  <div class="container">
+    <!-- Ortga tugma -->
+    <a href="../index.html" class="back-btn">
+      <i class="fa-solid fa-arrow-left"></i>
+    </a>
 
-        <!-- Ortga qaytish uchun tugma -->
-        <a href="../index.html" id="back">
-            <i class="fa-solid fa-x" style="color: #ffffff;"></i>
-        </a>
+    <!-- Header -->
+    <h1>Create Your Account</h1>
 
-        <form id="form">
-            <input required type="text" id="name" placeholder="First Name">
-            <input required type="text" id="surname" placeholder="Last Name">
-            <input required type="email" id="email" placeholder="@Email">
-            <input required type="password" id="password" placeholder="Password">
+    <!-- Form -->
+    <form id="form">
+      <div class="input-group">
+        <input type="text" id="name" placeholder="First Name" required>
+        <label for="name">First Name</label>
+      </div>
+      <div class="input-group">
+        <input type="text" id="surname" placeholder="Last Name" required>
+        <label for="surname">Last Name</label>
+      </div>
+      <div class="input-group">
+        <input type="email" id="email" placeholder="Email" required>
+        <label for="email">Email</label>
+      </div>
+      <div class="input-group">
+        <input type="password" id="password" placeholder="Password" required>
+        <label for="password">Password</label>
+      </div>
 
-            <input type="button" id="up_btn" value="Send">
-        </form>
+      <button type="button" id="up_btn">Sign Up</button>
+    </form>
+
+    <!-- Google Sign Up Option (future feature placeholder) -->
+    <div class="social-signup">
+      <p>Or sign up with</p>
+      <div class="social-icons">
+        <i class="fab fa-google"></i>
+        <i class="fab fa-facebook"></i>
+        <i class="fab fa-twitter"></i>
+      </div>
     </div>
-
-    <script src="../js/signup.js"></script>
+  </div>
 </body>
 </html>
