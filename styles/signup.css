@@ -1,189 +1,78 @@
-/* ========== GLOBAL ========== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
+  font-family: sans-serif;
 }
 
 body {
-  font-size: 16px;
-  min-height: 100vh;
-  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(../images/backgraund.jpg) no-repeat center center/cover;
-  color: #fff;
+  height: 100vh;
+  background: linear-gradient(135deg, #141e30, #243b55);
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
-  overflow-x: hidden;
-  animation: fadeInBody 1s ease forwards;
 }
 
-@keyframes fadeInBody {
-  from {opacity: 0;}
-  to {opacity: 1;}
-}
-
-/* ========== CONTAINER ========== */
-.container {
-  width: 400px;
-  max-width: 95%;
-  background: rgba(0,0,0,0.8);
-  padding: 30px 25px;
-  border-radius: 20px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.5);
-  position: relative;
-  animation: slideIn 1s ease forwards;
-}
-
-@keyframes slideIn {
-  from { opacity: 0; transform: translateY(-30px);}
-  to { opacity: 1; transform: translateY(0);}
-}
-
-/* ========== BACK BUTTON ========== */
-.back-btn {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  color: #fff;
-  font-size: 22px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-.back-btn:hover {
-  color: #00d8d8;
-  transform: rotate(-15deg);
-}
-
-/* ========== HEADER ========== */
-.container h1 {
-  text-align: center;
-  font-size: 28px;
-  color: #00d8d8;
-  margin-bottom: 30px;
-  animation: titlePop 1s ease forwards;
-}
-
-@keyframes titlePop {
-  0% { opacity: 0; transform: scale(0.8);}
-  100% { opacity: 1; transform: scale(1);}
-}
-
-/* ========== FORM INPUTS ========== */
-.input-group {
-  position: relative;
-  margin-bottom: 20px;
-}
-
-.input-group input {
+.signup-container {
   width: 100%;
-  padding: 14px 15px;
+  max-width: 400px;
+}
+
+form {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 30px;
   border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  color: #fff;
+  animation: fade 0.8s ease;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+h1 {
+  text-align: center;
+}
+
+input {
+  padding: 12px;
+  border-radius: 8px;
   border: none;
   outline: none;
-  font-size: 14px;
-  background: rgba(255,255,255,0.1);
-  color: #fff;
-  transition: all 0.3s ease;
 }
 
-.input-group input:focus {
-  background: rgba(255,255,255,0.2);
-  outline: 2px solid #00d8d8;
-  transform: scale(1.02);
-}
-
-.input-group label {
-  position: absolute;
-  left: 15px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #aaa;
-  font-size: 13px;
-  pointer-events: none;
-  transition: all 0.3s ease;
-}
-
-.input-group input:focus + label,
-.input-group input:not(:placeholder-shown) + label {
-  top: -10px;
-  left: 10px;
-  font-size: 11px;
-  color: #00d8d8;
-  background: rgba(0,0,0,0.8);
-  padding: 0 5px;
-  border-radius: 5px;
-}
-
-/* ========== BUTTON ========== */
-#up_btn {
-  width: 100%;
-  padding: 14px;
+button {
+  padding: 12px;
+  border-radius: 8px;
   border: none;
-  border-radius: 12px;
-  font-size: 16px;
-  font-weight: 600;
-  color: #fff;
-  background: #00d8d8;
+  background: #00c6ff;
+  color: #000;
+  font-weight: bold;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: 0.3s;
 }
 
-#up_btn:hover {
-  background: #028383;
-  transform: scale(1.05);
+button:hover {
+  background: #00a2d6;
 }
 
-/* ========== SOCIAL SIGNUP ========== */
-.social-signup {
+.link {
   text-align: center;
-  margin-top: 25px;
-  color: #ccc;
   font-size: 14px;
-  animation: fadeInUp 1s ease forwards;
 }
 
-.social-icons {
-  margin-top: 10px;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-}
-
-.social-icons i {
-  font-size: 24px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.social-icons i:hover {
-  color: #00d8d8;
-  transform: scale(1.2) rotate(10deg);
-}
-
-/* ========== ANIMATIONS ========== */
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(20px);}
-  to { opacity: 1; transform: translateY(0);}
-}
-
-/* ========== RESPONSIVE ========== */
-@media screen and (max-width: 480px) {
-  .container {
-    padding: 25px 20px;
-  }
-
-  .container h1 {
-    font-size: 24px;
-  }
-
-  .back-btn {
-    font-size: 20px;
-  }
-
-  .social-icons i {
-    font-size: 20px;
-  }
+.link a {
+  color: #00c6ff;
+  text-decoration: none;
 }
