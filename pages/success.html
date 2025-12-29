@@ -1,27 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uz">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Success</title>
-    <link rel="stylesheet" href="../styles/success.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Muvaffaqiyat</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <!-- Style -->
+  <link rel="stylesheet" href="../styles/success.css">
 </head>
 <body>
-     <h1>Shaxsiy kabinetingizga xush kelibsiz</h1>
+  <div class="container">
+    <h1>🎉 Shaxsiy kabinetingizga xush kelibsiz! 🎉</h1>
+    <p class="subtitle">Sizning saqlangan ma’lumotlaringiz:</p>
 
-        <h1>&#128071 Sizning Ma'umotlaringiz &#128071</h1>
-
-    <div class="wrapper">
-        <h2>Ismingiz: <span id="name"></span></h2>
-        <h2>Familyangiz: <span id="surname"></span></h2>
-        <h2>Emailingiz: <span id="email"></span></h2>
-        <h2>Parolingiz: <span id="password"></span></h2>
+    <div class="user-info">
+      <div class="info-card">
+        <i class="fa-solid fa-user"></i>
+        <p><span id="name"></span> <span id="surname"></span></p>
+      </div>
+      <div class="info-card">
+        <i class="fa-solid fa-envelope"></i>
+        <p id="email"></p>
+      </div>
+      <div class="info-card">
+        <i class="fa-solid fa-lock"></i>
+        <p id="password"></p>
+      </div>
     </div>
 
-    <div class="sava-block">
-        <!-- bu yerda foydalanuvchi saqlagan videsi bo'ladi -->
+    <div class="saved-movies">
+      <h2>📽️ Sizning saqlangan kinolaringiz</h2>
+      <div class="movies-cards" id="moviesContainer">
+        <!-- JavaScript orqali kino kartochkalari qo'shiladi -->
+      </div>
     </div>
+  </div>
 
-    <script src="../js/success.js"></script>
+  <script src="../js/success.js"></script>
 </body>
 </html>
