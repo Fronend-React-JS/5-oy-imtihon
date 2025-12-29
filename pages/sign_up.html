@@ -1,57 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uz">
 <head>
   <meta charset="UTF-8">
+  <title>Ro‘yxatdan o‘tish</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sign Up</title>
 
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
-  <!-- Style -->
   <link rel="stylesheet" href="../styles/signup.css">
 </head>
 <body>
-  <div class="container">
-    <!-- Ortga tugma -->
-    <a href="../index.html" class="back-btn">
-      <i class="fa-solid fa-arrow-left"></i>
-    </a>
 
-    <!-- Header -->
-    <h1>Create Your Account</h1>
+  <div class="signup-container">
+    <form id="signupForm">
+      <h1>Ro‘yxatdan o‘tish</h1>
 
-    <!-- Form -->
-    <form id="form">
-      <div class="input-group">
-        <input type="text" id="name" placeholder="First Name" required>
-        <label for="name">First Name</label>
-      </div>
-      <div class="input-group">
-        <input type="text" id="surname" placeholder="Last Name" required>
-        <label for="surname">Last Name</label>
-      </div>
-      <div class="input-group">
-        <input type="email" id="email" placeholder="Email" required>
-        <label for="email">Email</label>
-      </div>
-      <div class="input-group">
-        <input type="password" id="password" placeholder="Password" required>
-        <label for="password">Password</label>
-      </div>
+      <input type="text" id="name" placeholder="Ismingiz" required>
+      <input type="text" id="surname" placeholder="Familiyangiz" required>
+      <input type="email" id="email" placeholder="Email manzilingiz" required>
+      <input type="password" id="password" placeholder="Parol" required>
 
-      <button type="button" id="up_btn">Sign Up</button>
+      <button type="submit">Ro‘yxatdan o‘tish</button>
+
+      <p class="link">
+        Akkountingiz bormi?
+        <a href="./sign_in.html">Kirish</a>
+      </p>
     </form>
-
-    <!-- Google Sign Up Option (future feature placeholder) -->
-    <div class="social-signup">
-      <p>Or sign up with</p>
-      <div class="social-icons">
-        <i class="fab fa-google"></i>
-        <i class="fab fa-facebook"></i>
-        <i class="fab fa-twitter"></i>
-      </div>
-    </div>
   </div>
+
+  <!-- JS ENG OXIRIDA -->
+  <script src="../js/signup.js"></script>
 </body>
 </html>
