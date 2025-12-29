@@ -1,89 +1,189 @@
+/* ========== GLOBAL ========== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
 }
 
 body {
-    font-size: 18px;
-    font-family: sans-serif;
-    background-color: black;
-    background-image: url(../images/backgraund.jpg);
-    background-size: cover; /* Ekranning barchasini egallash */
-    background-repeat: no-repeat; /* Rasmni takrorlamaslik */
-    color: white; /* Matn rangi oq */
-  }
-
-.container {
-  width: 300px;
-  height: 450px;
-  margin: 0 auto;
-  margin-top: 100px;
-  padding: 20px;
-  border-radius: 15px;
-  display: flex;
-  flex-direction: column;
-  background-color: #fff;
-  background-image: url(../images/movie-sgnIn.jpg);
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat; 
-  box-shadow: 10px 10px 10px black;
-  position: relative;
-}
-
-h1 {
-  text-align: center;
+  font-size: 16px;
+  min-height: 100vh;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(../images/backgraund.jpg) no-repeat center center/cover;
   color: #fff;
-}
-
-.container form {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 10px;
-  margin-top: 30px;
-}
-form input {
-  padding: 10px 15px;
-  border-radius: 15px;
-  border: none;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  overflow-x: hidden;
+  animation: fadeInBody 1s ease forwards;
 }
 
-#name {
-  margin-bottom: 10px;
+@keyframes fadeInBody {
+  from {opacity: 0;}
+  to {opacity: 1;}
 }
 
-#surname {
-  margin-bottom: 10px;
+/* ========== CONTAINER ========== */
+.container {
+  width: 400px;
+  max-width: 95%;
+  background: rgba(0,0,0,0.8);
+  padding: 30px 25px;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+  position: relative;
+  animation: slideIn 1s ease forwards;
 }
 
-#number {
-  margin-bottom: 10px;
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(-30px);}
+  to { opacity: 1; transform: translateY(0);}
 }
 
-#email {
-  margin-bottom: 10px;
-}
-
-#back{
-  width: 20px;
-  padding: 2px 10px;
+/* ========== BACK BUTTON ========== */
+.back-btn {
   position: absolute;
-  right: 30px;
-  top: 30px;
+  top: 20px;
+  left: 20px;
+  color: #fff;
+  font-size: 22px;
+  text-decoration: none;
+  transition: all 0.3s ease;
 }
 
-#up_btn {
-  background-color: rgb(0, 216, 216);
+.back-btn:hover {
+  color: #00d8d8;
+  transform: rotate(-15deg);
+}
+
+/* ========== HEADER ========== */
+.container h1 {
+  text-align: center;
+  font-size: 28px;
+  color: #00d8d8;
+  margin-bottom: 30px;
+  animation: titlePop 1s ease forwards;
+}
+
+@keyframes titlePop {
+  0% { opacity: 0; transform: scale(0.8);}
+  100% { opacity: 1; transform: scale(1);}
+}
+
+/* ========== FORM INPUTS ========== */
+.input-group {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 14px 15px;
+  border-radius: 12px;
   border: none;
-  color: white;
-  font-size: 20px;
-  margin-top: 20px;
+  outline: none;
+  font-size: 14px;
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.input-group input:focus {
+  background: rgba(255,255,255,0.2);
+  outline: 2px solid #00d8d8;
+  transform: scale(1.02);
+}
+
+.input-group label {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #aaa;
+  font-size: 13px;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown) + label {
+  top: -10px;
+  left: 10px;
+  font-size: 11px;
+  color: #00d8d8;
+  background: rgba(0,0,0,0.8);
+  padding: 0 5px;
+  border-radius: 5px;
+}
+
+/* ========== BUTTON ========== */
+#up_btn {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  background: #00d8d8;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 #up_btn:hover {
-  background-color: rgb(2, 131, 131);
-  transition: all 0.4s;
+  background: #028383;
+  transform: scale(1.05);
+}
+
+/* ========== SOCIAL SIGNUP ========== */
+.social-signup {
+  text-align: center;
+  margin-top: 25px;
+  color: #ccc;
+  font-size: 14px;
+  animation: fadeInUp 1s ease forwards;
+}
+
+.social-icons {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.social-icons i {
+  font-size: 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.social-icons i:hover {
+  color: #00d8d8;
+  transform: scale(1.2) rotate(10deg);
+}
+
+/* ========== ANIMATIONS ========== */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+/* ========== RESPONSIVE ========== */
+@media screen and (max-width: 480px) {
+  .container {
+    padding: 25px 20px;
+  }
+
+  .container h1 {
+    font-size: 24px;
+  }
+
+  .back-btn {
+    font-size: 20px;
+  }
+
+  .social-icons i {
+    font-size: 20px;
+  }
 }
