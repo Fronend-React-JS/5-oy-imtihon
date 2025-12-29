@@ -98,21 +98,4 @@ button:hover {
     transform: translateY(0);
   }
 
-  input.error {
-  border: 2px solid #ff4d4f;
-  box-shadow: 0 0 10px rgba(255, 77, 79, 0.6);
-}
-
-@keyframes shake {
-  0% { transform: translateX(0); }
-  25% { transform: translateX(-5px); }
-  50% { transform: translateX(5px); }
-  75% { transform: translateX(-5px); }
-  100% { transform: translateX(0); }
-}
-
-.shake {
-  animation: shake 0.4s;
-}
-
 }
