@@ -1,17 +1,18 @@
-// JavaScript qismi
 const email = document.getElementById('email');
 const password = document.getElementById('password');
 const btn = document.getElementById('btn');
 const form = document.getElementById('form');
 
+// Email tekshirish
 function validateEmail(email) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
 }
 
+// Validatsiya
 function validate() {
     if (!email.value || !validateEmail(email.value)) {
-        alert("emailni to'g'ri kiriting");
+        alert("Iltimos, emailni to‘g‘ri kiriting!");
         email.style.outlineColor = 'red';
         email.value = '';
         email.focus();
@@ -19,6 +20,7 @@ function validate() {
     }
 
     if (!password.value) {
+        alert("Iltimos, parolni kiriting!");
         password.style.outlineColor = 'red';
         password.focus();
         return false;
@@ -27,30 +29,22 @@ function validate() {
     return true;
 }
 
-btn.addEventListener('click', function() {
-    if (!validate()) {
+// Kirish tugmasi
+btn.addEventListener('click', function () {
+    if (!validate()) return;
+
+    let data = localStorage.getItem('users') ? JSON.parse(localStorage.getItem('users')) : [];
+    if (!data.length) {
+        alert("Iltimos, avval ro‘yxatdan o‘ting!");
+        window.location.href = "sign_up.html";
         return;
     }
 
-    let data = localStorage.getItem('users') ? JSON.parse(localStorage.getItem('users')) : [];
-
-    if (data.length) {
-        let userFound = false;
-
-        data.forEach(user => {
-            if (user.email === email.value && user.password === password.value) {
-                userFound = true;
-                window.location.href = `http://127.0.0.1:5500/pages/success.html?user=${user.email}`;
-                return;
-            }
-        });
-
-        if (!userFound) {
-            alert("Noto'g'ri email yoki parol");
-            form.reset();
-        }
+    const user = data.find(u => u.email === email.value && u.password === password.value);
+    if (user) {
+        window.location.href = `success.html?user=${user.email}`;
     } else {
-        alert("Iltimos avval ro'yxatdan o'ting");
-        window.location.href = "http://127.0.0.1:5500/pages/sign_up.html";
+        alert("Email yoki parol noto‘g‘ri!");
+        form.reset();
     }
 });
