@@ -1,22 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uz">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movie Sign In</title>
-    <link rel="stylesheet" href="../styles/signin.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kirish</title>
+
+  <link rel="stylesheet" href="../styles/signin.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Log In</h1>
-        <form id="form">
-            <input required type="email" id="email" placeholder="Email...">
-            <input required type="password" id="password" placeholder="Password...">
 
-            <input required type="button" id="btn" value="Log in">
-        </form>
-    </div>
+  <div class="auth-container">
+    <form class="auth-card" id="signinForm">
+      <h2>Tizimga kirish</h2>
 
-    <script src="../js/sigin.js"></script>
+      <div class="input-box">
+        <i class="fa fa-envelope"></i>
+        <input type="email" id="email" placeholder="Email manzilingiz" required>
+      </div>
+
+      <div class="input-box">
+        <i class="fa fa-lock"></i>
+        <input type="password" id="password" placeholder="Parol" required>
+      </div>
+
+      <button type="submit">Kirish</button>
+
+      <p class="link">
+        Akkountingiz yo‘qmi?
+        <a href="sign_up.html">Ro‘yxatdan o‘tish</a>
+      </p>
+
+      <p class="error" id="errorMsg"></p>
+    </form>
+  </div>
+
+  <script src="../js/signin.js"></script>
 </body>
 </html>
